@@ -18,10 +18,22 @@
         opacity: 0
     }
 }
+/* hide blog rss */
+.blog-social-media-section a[aria-label="Blog's XML Feed"] {
+    display: none;
+}
+/* fix hover on menu items, which should be the entire button */
+.blog-nav-active:hover > .blog-nav-text,
+.blog-nav:hover > .blog-nav-text {
+    background: rgba(255,255,255,.2);
+}
 /* header background animation */
 body {
     /* prevent scrollbars as blog-header has large elements and cannot itself be overflow: hidden */
     overflow-x: hidden;
+}
+.blog-post-card {
+    min-height: 45rem;
 }
 .blog-header {
 /*  background: linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%); */
