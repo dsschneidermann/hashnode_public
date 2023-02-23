@@ -259,3 +259,96 @@ body {
 #heading-work-experience {
     margin-bottom: 3rem;
 }
+
+/* Printing support. */
+@media print
+{    
+    .blog-header .blog-bars-button,
+    .blog-header .blog-search-button, 
+    .blog-header .blog-theme-switcher,
+    .blog-header .blog-menu-profile,
+    .blog-header .blog-more-icon,
+    .blog-header .blog-follow-button {
+        opacity: 0;
+    }
+    .blog-header {
+        /* Whereas we couldn't hide the overflow in normal web mode,
+          in print it's not possible to open menus and we can hide it here
+          for a consistent page size. */
+        overflow: hidden;
+        height: 150px;
+    }
+    .blog-header .container > div {
+        margin-left: -50px;
+        margin-right: 0;
+    }
+    .blog-title a {
+        display: none;
+    }
+    .blog-title:before {
+        display: block;
+        margin-top: -3rem;
+        text-align: left;
+        content: 'Dennis Schneidermann';
+        text-transform: capitalize;
+    }
+    .blog-title:after {
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        content: 'dennis-s.dk/cv';
+        text-transform: lowercase;
+    }
+    .blog-page-area p {
+        font-size: 15px;
+    }
+    #heading-my-current-career-goals + ul + ul {
+        flex-direction: row;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    #heading-intro + p > i {
+        flex-direction: row;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    hr {
+        display: none;
+    }
+    blockquote p {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .blog-page-card {
+        padding-bottom: 3rem !important;
+    }
+    .blog-footer-credits {
+        height: 100px;
+    }
+    .blog-footer-credits div:first-child {
+        margin-bottom: 1rem;
+    }
+}
+h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+}
+h1+p, h2+p, h3+p {
+    page-break-before: avoid;
+}
+.blog-footer-area * {
+    page-break-before: avoid;
+    page-break-after: avoid;
+}
+table, table tr, table tr td, table tr th {
+    page-break-inside: avoid;
+}
+@page {
+    size: 210mm 297mm;
+    margin-top: 10mm;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5mm;
+}
+@page :first {
+    margin-top: 0
+}
